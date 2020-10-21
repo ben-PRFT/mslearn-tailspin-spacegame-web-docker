@@ -24,6 +24,9 @@ stages:
         containerRegistry: 'Container Registry'
         tags: |
           $(tag)
+    - task: WhiteSource Bolt@20
+      inputs:
+        cwd: $(Build.Repository.LocalPath)
 
 - stage: 'Deploy'
   displayName: 'Deploy the container'
